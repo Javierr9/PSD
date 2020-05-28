@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="General.master.cs" Inherits="TokoBeDia.MasterPage.General" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TokoBeDia</title>
+
+    <style>
+        .logo{
+            font-family: Arial;
+            color: #1b9663;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .content{
+            font-family: Arial;
+            font-size: 13px;
+        }
+        .validate{
+            color: red;
+        }
+        .headerAll{
+            display:inline-block;
+        }        
+        .headerGuest{
+            display:inline-block;
+        }
+        .headerMember{
+            display:inline-block;
+        }
+        .headerAdmin{
+            display:inline-block;
+        }
+        .success{
+            color: green;
+        }
+        footer{
+            font-family: Arial;
+            font-size: 13px;
+            position: fixed;
+            bottom: 0;
+        }
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <b class="logo">TokoBeDia</b>
+
+            <div class="headerAll">
+                <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnHome_Click" CausesValidation="false" />
+                <asp:Button ID="btnProduct" runat="server" Text="Product" OnClick="btnProduct_Click" CausesValidation="false"/>
+            </div>
+            
+            <div class="headerGuest">
+                <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" Visible="false" CausesValidation="false"/>    
+                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Visible="false" CausesValidation="false"/>
+            </div>
+
+            <div class="headerAdmin">
+                <asp:Button ID="btnViewUser" runat="server" Text="View User" Visible="false" OnClick="btnViewUser_Click" CausesValidation="false"/>  
+                <asp:Button ID="btnViewProductType" runat="server" Text="Product Type" Visible="false" OnClick="btnViewProductType_Click"  CausesValidation="false"/> 
+            </div>
+
+            <div class="headerMember">
+                <asp:Button ID="btnProfile" runat="server" Text="Profile" Visible="false" OnClick="btnProfile_Click" CausesValidation="false"/> 
+                <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" Visible="false" OnClick="btnChangePassword_Click" CausesValidation="false" /> 
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="false" CausesValidation="false"/>
+            </div>
+
+        </header>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <p>Copyright © 2020 by Vincentia Graciella Octaviana</p>
+        </footer>
+
+    </form>
+</body>
+</html>
