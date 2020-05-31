@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -20,7 +20,7 @@ namespace TokoBeDia.Views
             }
             if (!IsPostBack)
             {
-                List<ProductType> dataPT = new ProductTypeRepository().GetAllProductType();
+                List<ProductType> dataPT = new ProductTypeHandler().GetAllProductType();
                 ddlProductType.DataSource = dataPT;
                 ddlProductType.DataTextField = "Name";
                 ddlProductType.DataValueField = "ID";
@@ -52,7 +52,7 @@ namespace TokoBeDia.Views
             lblErrorPrice.Visible = false;
 
             Product product = new ProductFactory().CreateProduct(Convert.ToInt32(ddlProductType.SelectedValue), name, price, stock); //default value, coz di soal gaada, why tho
-            new ProductRepository().InsertProduct(product);
+            new ProductHandler().InsertProduct(product);
             
             
             txtName.Text = "";

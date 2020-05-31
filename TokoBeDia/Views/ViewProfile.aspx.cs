@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -20,7 +20,7 @@ namespace TokoBeDia.Views
             }
             else
             {
-                User dataUser = new UserRepository().GetUserByEmail(Convert.ToString(Session["UserEmail"]));
+                User dataUser = new UserHandler().GetUserByEmail(Convert.ToString(Session["UserEmail"]));
 
                 lblEmail.Text = dataUser.Email;
                 lblName.Text = dataUser.Name;

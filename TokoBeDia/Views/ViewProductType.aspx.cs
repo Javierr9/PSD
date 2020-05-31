@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -26,7 +26,7 @@ namespace TokoBeDia.Views
         }
         private void UpdateGridData()
         {
-            gridProductType.DataSource = new ProductTypeRepository().GetAllProductType();
+            gridProductType.DataSource = new ProductTypeHandler().GetAllProductType();
             gridProductType.DataBind();
         }
         protected void btnInsertProductType_Click(object sender, EventArgs e)
@@ -44,14 +44,14 @@ namespace TokoBeDia.Views
             GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
             int ID = Convert.ToInt32(row.Cells[0].Text);
 
-            bool check = new ProductTypeRepository().GetReferencedProduct(ID);
+            bool check = new ProductTypeHandler().GetReferencedProduct(ID);
             if (check == true)
             {
                 lblErrorDelete.Visible = true;
                 return;
             }
 
-            new ProductTypeRepository().DeleteProductType(ID);
+            new ProductTypeHandler().DeleteProductType(ID);
             UpdateGridData();
         }
     }

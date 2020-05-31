@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -22,7 +22,7 @@ namespace TokoBeDia.Views
             {
                 int ID = Convert.ToInt32(Request.QueryString["producttypeid"]);
                 
-                ProductType currentData = new ProductTypeRepository().GetProductTypeByID(ID);
+                ProductType currentData = new ProductTypeHandler().GetProductTypeByID(ID);
                 txtProductType.Text = currentData.Name;
                 txtDescription.Text = currentData.Description;
             }
@@ -34,7 +34,7 @@ namespace TokoBeDia.Views
             string name = txtProductType.Text;
             string description = txtDescription.Text;
 
-            List<ProductType> check = new ProductTypeRepository().GetSameNameUpdate(name);
+            List<ProductType> check = new ProductTypeHandler().GetSameNameUpdate(name);
             int flag = 0;
             foreach(var item in check)
             {
@@ -51,7 +51,7 @@ namespace TokoBeDia.Views
             }
 
             ProductType newProductType = new ProductTypeFactory().CreateProduct(name, description);
-            new ProductTypeRepository().UpdateProductType(newProductType, ID);
+            new ProductTypeHandler().UpdateProductType(newProductType, ID);
 
             lblSuccess.Visible = true;
         }

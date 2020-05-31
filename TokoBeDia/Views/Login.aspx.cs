@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -29,7 +29,7 @@ namespace TokoBeDia.Views
             string email = txtEmail.Text;
             string password = txtPassword.Text;
 
-            User check = new UserRepository().GetUserByEmailAndPass(email, password);
+            User check = new UserHandler().GetUserByEmailAndPass(email, password);
             if (check != null)
             {
                 if(check.Status == "active")

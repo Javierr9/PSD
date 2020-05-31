@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -25,14 +25,14 @@ namespace TokoBeDia.Views
             string name = txtProductType.Text;
             string description = txtDescription.Text;
 
-            bool check = new ProductTypeRepository().GetSameNameInsert(name);
+            bool check = new ProductTypeHandler().GetSameNameInsert(name);
             if(check == true)
             {
                 lblErrorProductType.Text = "Must be unique";
                 return;
             }
             ProductType newProductType = new ProductTypeFactory().CreateProduct(name, description);
-            new ProductTypeRepository().InsertProductType(newProductType);
+            new ProductTypeHandler().InsertProductType(newProductType);
             lblErrorProductType.Text = "";
             txtProductType.Text = "";
             txtDescription.Text = "";

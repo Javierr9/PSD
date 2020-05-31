@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -26,7 +26,7 @@ namespace TokoBeDia.Views
             int roleId = 1;
             string status = "active";
 
-            bool check = new UserRepository().GetSameEmailInsert(email);
+            bool check = new UserHandler().GetSameEmailInsert(email);
             if(check == true)
             {
                 lblErrorEmail.Visible = true;
@@ -35,7 +35,7 @@ namespace TokoBeDia.Views
 
             User newMember = new UserFactory().CreteUser(email, name, password, gender, roleId, status);
 
-            new UserRepository().InsertUser(newMember);
+            new UserHandler().InsertUser(newMember);
 
             txtEmail.Text = "";
             txtName.Text = "";

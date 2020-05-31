@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -22,7 +22,7 @@ namespace TokoBeDia.Views
             {
                 if (!IsPostBack)
                 {
-                    User dataUser = new UserRepository().GetUserByEmail(Convert.ToString(Session["UserEmail"]));
+                    User dataUser = new UserHandler().GetUserByEmail(Convert.ToString(Session["UserEmail"]));
 
                     txtEmail.Text = dataUser.Email;
                     txtName.Text = dataUser.Name;
@@ -46,7 +46,7 @@ namespace TokoBeDia.Views
 
             User newData = new UserFactory().CreteUser(newEmail, newName, null, gender, roleId, null);
 
-            new UserRepository().UpdateUser(newData, currentEmail);
+            new UserHandler().UpdateUser(newData, currentEmail);
 
             lblSuccess.Visible = true;
         }

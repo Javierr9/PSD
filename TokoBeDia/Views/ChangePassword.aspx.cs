@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -32,14 +32,14 @@ namespace TokoBeDia.Views
                 return;
             }
 
-            User check = new UserRepository().GetUserByEmailAndPass(email, oldPassword);
+            User check = new UserHandler().GetUserByEmailAndPass(email, oldPassword);
             if(check == null)
             {
                 lblErrorChange.Text = "Mismatch password";
                 return;
             }
 
-            new UserRepository().UpdatePassword(check, newPassword);
+            new UserHandler().UpdatePassword(check, newPassword);
             lblErrorChange.Text = "";
             lblErrorNewPassword.Text = "";
             lblSuccess.Visible = true;

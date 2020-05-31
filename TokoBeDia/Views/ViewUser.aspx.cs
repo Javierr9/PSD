@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
 using TokoBeDia.Factories;
-using TokoBeDia.Repositories;
+using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views
 {
@@ -26,7 +26,7 @@ namespace TokoBeDia.Views
         }
         private void UpdateGridData()
         {
-            gridUser.DataSource = new UserRepository().GetAllUser();
+            gridUser.DataSource = new UserHandler().GetAllUser();
             gridUser.DataBind();
         }
 
@@ -45,11 +45,11 @@ namespace TokoBeDia.Views
 
             if(status == "active")
             {
-                new UserRepository().UpdateStatus(ID, "blocked");
+                new UserHandler().UpdateStatus(ID, "blocked");
             }
             else if(status == "blocked")
             {
-                new UserRepository().UpdateStatus(ID, "active");
+                new UserHandler().UpdateStatus(ID, "active");
             }
 
             lblErrorChange.Visible = false;
@@ -71,11 +71,11 @@ namespace TokoBeDia.Views
 
             if (roleID == 1)
             {
-                new UserRepository().UpdateRole(ID, 2);
+                new UserHandler().UpdateRole(ID, 2);
             }
             else if(roleID == 2)
             {
-                new UserRepository().UpdateRole(ID, 1);
+                new UserHandler().UpdateRole(ID, 1);
             }
 
             lblErrorChange.Visible = false;
