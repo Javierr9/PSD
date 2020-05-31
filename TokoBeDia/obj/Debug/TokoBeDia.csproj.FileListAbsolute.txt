@@ -72,3 +72,40 @@ E:\Kuliah\SEMESTER 4\PSD\LAB\Quiz\TokoBeDia\TokoBeDia\bin\Microsoft.CodeDom.Prov
 E:\Kuliah\SEMESTER 4\PSD\LAB\Quiz\TokoBeDia\TokoBeDia\obj\Debug\TokoBeDia.csprojResolveAssemblyReference.cache
 E:\Kuliah\SEMESTER 4\PSD\LAB\Quiz\TokoBeDia\TokoBeDia\obj\Debug\TokoBeDia.dll
 E:\Kuliah\SEMESTER 4\PSD\LAB\Quiz\TokoBeDia\TokoBeDia\obj\Debug\TokoBeDia.pdb
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\ApplicationInsights.config
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\csc.exe
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\vbc.exe
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\VBCSCompiler.exe
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.dll.config
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.pdb
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.SqlServer.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Web.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.SqlServer.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Web.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.csprojResolveAssemblyReference.cache
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.pdb
