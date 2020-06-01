@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;
-using TokoBeDia.Factories;
 using TokoBeDia.Handlers;
 
 namespace TokoBeDia.Views

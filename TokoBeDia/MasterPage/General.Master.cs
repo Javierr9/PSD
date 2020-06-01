@@ -25,6 +25,7 @@ namespace TokoBeDia.MasterPage
                 {
                     btnViewUser.Visible = true;
                     btnViewProductType.Visible = true;
+                    btnViewPaymentType.Visible = true;
                 }
             }
             else
@@ -87,5 +88,9 @@ namespace TokoBeDia.MasterPage
             Response.Redirect("ViewProductType.aspx");
         }
 
+        protected void btnViewPaymentType_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewPaymentType.aspx");
+        }
     }
 }

@@ -54,6 +54,7 @@ namespace TokoBeDia.Views
             new ProductTypeHandler().UpdateProductType(newProductType, ID);
 
             lblSuccess.Visible = true;
+            lblErrorProductType.Visible = false;
         }
     }
 }

@@ -65,6 +65,7 @@
             <div class="headerAdmin">
                 <asp:Button ID="btnViewUser" runat="server" Text="View User" Visible="false" OnClick="btnViewUser_Click" CausesValidation="false"/>  
                 <asp:Button ID="btnViewProductType" runat="server" Text="Product Type" Visible="false" OnClick="btnViewProductType_Click"  CausesValidation="false"/> 
+                <asp:Button ID="btnViewPaymentType" runat="server" Text="Payment Type" Visible="false" OnClick="btnViewPaymentType_Click" CausesValidation="false"/> 
             </div>
 
             <div class="headerMember">

@@ -10,6 +10,7 @@
         <asp:Label Width="150px" runat="server" Text="Product Type"></asp:Label>
         <asp:TextBox ID="txtProductType" runat="server" ></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqProductType" runat="server" ControlToValidate="txtProductType" CssClass="validate" ErrorMessage="Must be filled"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator Display = "Dynamic" ControlToValidate = "txtProductType" ID="regexProductType" ValidationExpression = "^[\s\S]{5,}$" runat="server" ErrorMessage="Must consists of 5 characters or more" CssClass="validate"></asp:RegularExpressionValidator>
         <asp:Label ID="lblErrorProductType" runat="server" Text="" CssClass="validate"></asp:Label>
         <br /><br />
 

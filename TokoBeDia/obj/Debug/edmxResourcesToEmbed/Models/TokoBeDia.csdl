@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TokoBeDiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Carts__ProductID__4AB81AF0" FromRole="Carts" ToRole="Products" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Carts__UserID__49C3F6B7" FromRole="Carts" ToRole="Users" />
+  </EntityType>
   <EntityType Name="DetailTransaction">
     <Key>
       <PropertyRef Name="TransactionID" />
@@ -18,8 +29,18 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentTypeID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DetailTransactions" Relationship="Self.FK__DetailTra__Trans__300424B4" FromRole="HeaderTransactions" ToRole="DetailTransactions" />
+    <NavigationProperty Name="PaymentType" Relationship="Self.FK__HeaderTra__Payme__36B12243" FromRole="HeaderTransactions" ToRole="PaymentTypes" />
     <NavigationProperty Name="User" Relationship="Self.FK__HeaderTra__UserI__2D27B809" FromRole="HeaderTransactions" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HeaderTransactions" Relationship="Self.FK__HeaderTra__Payme__36B12243" FromRole="PaymentTypes" ToRole="HeaderTransactions" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -30,6 +51,7 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Carts__ProductID__4AB81AF0" FromRole="Products" ToRole="Carts" />
     <NavigationProperty Name="DetailTransactions" Relationship="Self.FK__DetailTra__Produ__30F848ED" FromRole="Products" ToRole="DetailTransactions" />
     <NavigationProperty Name="ProductType" Relationship="Self.FK__Products__Produc__2A4B4B5E" FromRole="Products" ToRole="ProductTypes" />
   </EntityType>
@@ -61,9 +83,34 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Carts" Relationship="Self.FK__Carts__UserID__49C3F6B7" FromRole="Users" ToRole="Carts" />
     <NavigationProperty Name="HeaderTransactions" Relationship="Self.FK__HeaderTra__UserI__2D27B809" FromRole="Users" ToRole="HeaderTransactions" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleID__25869641" FromRole="Users" ToRole="Roles" />
   </EntityType>
+  <Association Name="FK__Carts__ProductID__4AB81AF0">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Carts__UserID__49C3F6B7">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Carts" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Carts">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__DetailTra__Produ__30F848ED">
     <End Role="Products" Type="Self.Product" Multiplicity="1" />
     <End Role="DetailTransactions" Type="Self.DetailTransaction" Multiplicity="*" />
@@ -85,6 +132,18 @@
       </Principal>
       <Dependent Role="DetailTransactions">
         <PropertyRef Name="TransactionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HeaderTra__Payme__36B12243">
+    <End Role="PaymentTypes" Type="Self.PaymentType" Multiplicity="1" />
+    <End Role="HeaderTransactions" Type="Self.HeaderTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeaderTransactions">
+        <PropertyRef Name="PaymentTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -125,12 +184,22 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="TokoBeDiaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carts" EntityType="Self.Cart" />
     <EntitySet Name="DetailTransactions" EntityType="Self.DetailTransaction" />
     <EntitySet Name="HeaderTransactions" EntityType="Self.HeaderTransaction" />
+    <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="ProductTypes" EntityType="Self.ProductType" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Carts__ProductID__4AB81AF0" Association="Self.FK__Carts__ProductID__4AB81AF0">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Carts__UserID__49C3F6B7" Association="Self.FK__Carts__UserID__49C3F6B7">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Carts" EntitySet="Carts" />
+    </AssociationSet>
     <AssociationSet Name="FK__DetailTra__Produ__30F848ED" Association="Self.FK__DetailTra__Produ__30F848ED">
       <End Role="Products" EntitySet="Products" />
       <End Role="DetailTransactions" EntitySet="DetailTransactions" />
@@ -138,6 +207,10 @@
     <AssociationSet Name="FK__DetailTra__Trans__300424B4" Association="Self.FK__DetailTra__Trans__300424B4">
       <End Role="HeaderTransactions" EntitySet="HeaderTransactions" />
       <End Role="DetailTransactions" EntitySet="DetailTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HeaderTra__Payme__36B12243" Association="Self.FK__HeaderTra__Payme__36B12243">
+      <End Role="PaymentTypes" EntitySet="PaymentTypes" />
+      <End Role="HeaderTransactions" EntitySet="HeaderTransactions" />
     </AssociationSet>
     <AssociationSet Name="FK__HeaderTra__UserI__2D27B809" Association="Self.FK__HeaderTra__UserI__2D27B809">
       <End Role="Users" EntitySet="Users" />

@@ -17,6 +17,7 @@ namespace TokoBeDia.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.Carts = new HashSet<Cart>();
             this.DetailTransactions = new HashSet<DetailTransaction>();
         }
     
@@ -26,6 +27,8 @@ namespace TokoBeDia.Models
         public int Price { get; set; }
         public int Stock { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailTransaction> DetailTransactions { get; set; }
         public virtual ProductType ProductType { get; set; }
