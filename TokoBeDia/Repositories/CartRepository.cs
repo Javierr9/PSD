@@ -11,9 +11,20 @@ namespace TokoBeDia.Repositories
     {
         private static TokoBeDiaEntities db = new TokoBeDiaEntities();
         public static void AddToCart(Cart carts)
-        {   
-            db.Carts.Add(carts);
-            db.SaveChanges();
+        {
+            bool check = db.Carts.Any(x => x.UserID == carts.UserID && x.ProductID == carts.ProductID);
+            if(check == true)
+            {
+                Cart existingCart = db.Carts.Where(x => x.UserID == carts.UserID && x.ProductID == carts.ProductID).FirstOrDefault();
+                existingCart.Quantity += carts.Quantity;
+                db.SaveChanges(); 
+            }
+            else
+            {
+                db.Carts.Add(carts);
+                db.SaveChanges();
+            }
+            
         }
 
     }
