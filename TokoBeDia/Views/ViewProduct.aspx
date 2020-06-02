@@ -20,6 +20,12 @@
                         <asp:Button ID="btnUpdate" Text="Update" runat="server" OnClick="btnUpdate_Click" />
                         <asp:Button ID="btnDelete" Text="Delete" runat="server" OnClick="btnDelete_Click"/>
                     </ItemTemplate>
+
+                </asp:TemplateField>
+                 <asp:TemplateField  >
+                    <ItemTemplate>
+                     <asp:Button ID="btnAddToCart" Text="Add To Cart" runat="server" OnClick="btnAddToCart_click"/>
+                    </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>

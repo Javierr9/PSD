@@ -17,8 +17,8 @@
                 <asp:BoundField DataField="Subtotal" HeaderText="Subtotal" ItemStyle-Width="100" />
                 <asp:TemplateField >
                     <ItemTemplate>
-                        <asp:Button ID="btnUpdate" Text="Update" runat="server" OnClick="btnUpdate_click" />
-                        <asp:Button ID="btnDelete" Text="Delete" runat="server" OnClick="btnDelete_click" />
+                        <asp:Button ID="btnUpdate" Text="Update" runat="server" />
+                        <asp:Button ID="btnDelete" Text="Delete" runat="server"  />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

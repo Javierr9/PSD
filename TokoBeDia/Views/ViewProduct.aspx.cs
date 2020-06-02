@@ -56,9 +56,7 @@ namespace TokoBeDia.Views
             Response.Redirect("InsertProduct.aspx");
         }
 
-<<<<<<< Updated upstream
-        
-=======
+
         protected void btnAddToCart_click(object sender, EventArgs e)
         {
             GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
@@ -67,6 +65,5 @@ namespace TokoBeDia.Views
 
 
         }
->>>>>>> Stashed changes
     }
 }

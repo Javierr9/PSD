@@ -94,6 +94,15 @@ namespace TokoBeDia.MasterPage {
         protected global::System.Web.UI.WebControls.Button btnViewPaymentType;
         
         /// <summary>
+        /// btnViewCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewCart;
+        
+        /// <summary>
         /// btnProfile control.
         /// </summary>
         /// <remarks>

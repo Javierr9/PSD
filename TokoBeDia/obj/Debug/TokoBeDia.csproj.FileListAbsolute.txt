@@ -109,3 +109,40 @@ C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.Cod
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.csprojResolveAssemblyReference.cache
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.dll
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.pdb
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.csprojResolveAssemblyReference.cache
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\obj\Debug\TokoBeDia.pdb
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\ApplicationInsights.config
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\csc.exe
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.CSharp.Core.targets
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\Microsoft.VisualBasic.Core.targets
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\System.Collections.Immutable.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\System.Reflection.Metadata.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\vbc.exe
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\VBCSCompiler.exe
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\roslyn\VBCSCompiler.exe.config
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.dll.config
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\TokoBeDia.pdb
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.SqlServer.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Agent.Intercept.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.DependencyCollector.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.PerfCounterCollector.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.ServerTelemetryChannel.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Web.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.WindowsServer.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.ApplicationInsights.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\EntityFramework.SqlServer.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.DependencyCollector.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.ServerTelemetryChannel.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Web.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.WindowsServer.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.ApplicationInsights.xml
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

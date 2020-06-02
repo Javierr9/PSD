@@ -13,7 +13,7 @@ namespace TokoBeDia.Handlers
     {
         public static void AddToCart(int UserId, int ProductId, int Quantity)
         {
-           Cart newCart = CartFactory.CreateCartData(UserId, ProductId, Quantity);
+           Cart newCart = new CartFactory().CreateCartData(UserId, ProductId, Quantity);
            CartRepository.AddToCart(newCart);
         }
         public static void updateDataJoin(GridView CartGrid, int UserId)

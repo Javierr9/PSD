@@ -20,20 +20,13 @@ namespace TokoBeDia.Views
             {
                 int UserId = Int32.Parse(Session["UserID"].ToString());
                 CartHandler.updateDataJoin(gridCart, UserId);
-            }
-            if (Convert.ToInt32(Session["RoleId"]) == 2)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else if (Convert.ToInt32(Session["RoleId"]) == 1)
-            {
                 int GrandTotal = 0;
                 gridCart.Columns[5].Visible = true;
                 for (int i = 0; i < gridCart.Rows.Count; ++i)
                 {
                     GrandTotal += Convert.ToInt32(gridCart.Rows[i].Cells[4].Text.ToString());
                 }
-                grandTotalLabel.Text = "Grand Total = " + GrandTotal.ToString(); 
+                grandTotalLabel.Text = "Grand Total = " + GrandTotal.ToString();
             }
         }
         protected void btnUpdate_click(object sender, EventArgs e)

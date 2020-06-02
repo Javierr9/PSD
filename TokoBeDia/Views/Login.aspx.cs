@@ -34,6 +34,7 @@ namespace TokoBeDia.Views
             {
                 if(check.Status == "active")
                 {
+                    Session["UserID"] = check.ID;
                     Session["UserEmail"] = txtEmail.Text;
                     Session["UserName"] = check.Name;
                     Session["RoleId"] = check.RoleID; 

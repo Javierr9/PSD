@@ -19,7 +19,8 @@ namespace TokoBeDia.MasterPage
                 btnProfile.Visible = true;
                 btnChangePassword.Visible = true;
                 btnLogout.Visible = true;
-
+                btnViewCart.Visible = true;
+                //btnViewTransactionHistory.Visible = true;
                 //this will be visible for only Admin
                 if (RoleId == 2)
                 {
@@ -70,6 +71,7 @@ namespace TokoBeDia.MasterPage
                 Session.Remove("UserEmail");
                 Session.Remove("Username");
                 Session.Remove("RoleId");
+                Session.Remove("UserID");
             }
             if(Request.Cookies["AuthCookie"] != null)
             {
@@ -92,5 +94,15 @@ namespace TokoBeDia.MasterPage
         {
             Response.Redirect("ViewPaymentType.aspx");
         }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewCart.aspx");
+        }
+
+        //protected void btnViewTransactionHistory_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("ViewTransactionHistory.aspx");
+        //}
     }
 }

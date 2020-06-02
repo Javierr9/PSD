@@ -37,8 +37,7 @@ namespace TokoBeDia.Handlers
         {
             new ProductRepository().DeleteProduct(ID);
         }
-<<<<<<< Updated upstream
-=======
+
         public void SubstractProductStockById(int ProductID, int Quantity)
         {
             Product Substract = new ProductRepository().GetProductByID(ProductID);
@@ -46,6 +45,5 @@ namespace TokoBeDia.Handlers
             new ProductRepository().UpdateProduct(Substract, ProductID);
         }
 
->>>>>>> Stashed changes
     }
 }
