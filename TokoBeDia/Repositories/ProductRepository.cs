@@ -51,5 +51,6 @@ namespace TokoBeDia.Repositories
                 db.SaveChanges();
             }
         }
+
     }
 }

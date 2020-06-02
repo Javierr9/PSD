@@ -19,7 +19,8 @@ namespace TokoBeDia.MasterPage
                 btnProfile.Visible = true;
                 btnChangePassword.Visible = true;
                 btnLogout.Visible = true;
-
+                btnViewCart.Visible = true;
+                btnViewTransactionHistory.Visible = true;
                 //this will be visible for only Admin
                 if (RoleId == 2)
                 {
@@ -91,6 +92,16 @@ namespace TokoBeDia.MasterPage
         protected void btnViewPaymentType_Click(object sender, EventArgs e)
         {
             Response.Redirect("ViewPaymentType.aspx");
+        }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewCart.aspx");
+        }
+
+        protected void btnViewTransactionHistory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewTransactionHistory.aspx");
         }
     }
 }

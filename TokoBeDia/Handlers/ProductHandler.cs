@@ -37,5 +37,6 @@ namespace TokoBeDia.Handlers
         {
             new ProductRepository().DeleteProduct(ID);
         }
+    
     }
 }

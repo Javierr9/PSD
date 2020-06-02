@@ -21,6 +21,11 @@
                         <asp:Button ID="btnDelete" Text="Delete" runat="server" OnClick="btnDelete_Click"/>
                     </ItemTemplate>
                 </asp:TemplateField>
+                 <asp:TemplateField  Visible="false" >
+                    <ItemTemplate>
+                        <asp:Button ID="btnAddToCart" Text="Add To Cart" runat="server" OnClick="btnAddToCart_click"/>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <br />

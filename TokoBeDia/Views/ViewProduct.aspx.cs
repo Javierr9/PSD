@@ -22,6 +22,9 @@ namespace TokoBeDia.Views
             {
                 gridProduct.Columns[5].Visible = true;
                 btnInsertProduct.Visible = true;
+            }else if(Convert.ToInt32(Session["RoleId"]) == 1)
+            {
+                gridProduct.Columns[6].Visible = true;
             }
         }
 
@@ -56,6 +59,15 @@ namespace TokoBeDia.Views
             Response.Redirect("InsertProduct.aspx");
         }
 
-        
+        protected void btnAddToCart_click(object sender, EventArgs e)
+        {
+            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
+            int ID = Convert.ToInt32(row.Cells[0].Text);
+            //int UserID = Convert.ToInt32(Session["UserID"]);
+            //CartHandler.AddToCart(UserID, ID);
+            Response.Redirect("AddToCart.aspx?ProductID=" +ID);
+
+
+        }
     }
 }
