@@ -26,6 +26,35 @@ namespace TokoBeDia.Repositories
             }
             
         }
+<<<<<<< HEAD
 
     }
+=======
+        public List<Cart> GetAllCart()
+        {
+            List<Cart> allCart = db.Carts.ToList();
+            return allCart;
+
+        }
+        public static object GetDataJoin(int UserId) {
+
+            var Join = from c in db.Carts
+                       where c.UserID == UserId
+                       join u in db.Users on c.UserID equals u.ID
+                       join p in db.Products on c.ProductID equals p.ID
+                       select new
+                       {
+                           p.ID,
+                           p.Name,
+                           p.Price,
+                           c.Quantity,
+                           Subtotal = c.Quantity * p.Price
+                       };
+            return Join.ToList();
+        }
+
+
+    }
+    
+>>>>>>> Jav
 }

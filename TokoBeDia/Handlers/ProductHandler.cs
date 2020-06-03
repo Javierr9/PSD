@@ -37,6 +37,13 @@ namespace TokoBeDia.Handlers
         {
             new ProductRepository().DeleteProduct(ID);
         }
-    
+
+        public void SubstractProductStockById(int ProductID, int Quantity)
+        {
+            Product Substract = new ProductRepository().GetProductByID(ProductID);
+            Substract.Stock -= Quantity;
+            new ProductRepository().UpdateProduct(Substract, ProductID);
+        }
+
     }
 }
