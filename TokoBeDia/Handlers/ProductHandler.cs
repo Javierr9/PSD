@@ -44,6 +44,12 @@ namespace TokoBeDia.Handlers
             Substract.Stock -= Quantity;
             new ProductRepository().UpdateProduct(Substract, ProductID);
         }
+        public void AddProductStockById(int ProductID, int Quantity)
+        {
+            Product Substract = new ProductRepository().GetProductByID(ProductID);
+            Substract.Stock += Quantity;
+            new ProductRepository().UpdateProduct(Substract, ProductID);
+        }
 
     }
 }

@@ -20,6 +20,11 @@ namespace TokoBeDia.Views
             {
                 int ProductID = Int32.Parse(Request.QueryString["ProductID"]);
                 int UserID = Int32.Parse(Session["UserID"].ToString());
+                Product UpdateProduct = new ProductHandler().GetProductByID(ProductID);
+                Name.Text = UpdateProduct.Name;
+                Price.Text = UpdateProduct.Price.ToString();
+                Stock.Text = UpdateProduct.Stock.ToString();
+
 
             }
 
@@ -27,7 +32,12 @@ namespace TokoBeDia.Views
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (Int32.Parse(txtQuantity.Text) > Int32.Parse(Stock.Text) || Int32.Parse(txtQuantity.Text) == 0)
+            int ProductID = Int32.Parse(Request.QueryString["ProductID"]);
+            int UserID = Int32.Parse(Session["UserID"].ToString());
+            Product currentProduct = new ProductHandler().GetProductByID(ProductID);
+            Cart currentCart = new CartHandler().GetCartByTwoId(UserID, ProductID);
+            int currentListTotal = new CartHandler().CountListByProductId(ProductID);
+            if (Int32.Parse(txtQuantity.Text) > currentListTotal || Int32.Parse(txtQuantity.Text) == 0 || Int32.Parse(txtQuantity.Text) == currentCart.Quantity)
             {
                 txtQuantity.Text = "";
                 lblErrorSubmit.Text = "Please input a valid quantity";
@@ -37,20 +47,33 @@ namespace TokoBeDia.Views
             }
             else if (txtQuantity != null)
             {
-                int UserID = Int32.Parse(Session["UserID"].ToString());
-                int ProductID = Int32.Parse(Request.QueryString["ProductID"]);
+               
                 int Quantity = Int32.Parse(txtQuantity.Text);
-                CartHandler.AddToCart(UserID, ProductID, Quantity);
+                if (Int32.Parse(txtQuantity.Text) > currentCart.Quantity)
+                {
+                    int QuantityInput = Int32.Parse(txtQuantity.Text) - currentCart.Quantity;
+                    new ProductHandler().SubstractProductStockById(ProductID, QuantityInput);
+                }
+                else
+                {
+                    int QuantityInput = currentCart.Quantity - Int32.Parse(txtQuantity.Text);
+                    new ProductHandler().AddProductStockById(ProductID, QuantityInput);
+                }
+
+                CartHandler.UpdateCart(UserID, ProductID, Quantity);
                 txtQuantity.Text = "";
                 lblErrorSubmit.ForeColor = System.Drawing.Color.Black;
                 lblErrorSubmit.Text = "Successfully updated cart.";
                 lblErrorSubmit.Visible = true;
-                new ProductHandler().SubstractProductStockById(ProductID, Quantity);
+               
                 Product NewProduct = new ProductHandler().GetProductByID(ProductID);
                 Stock.Text = NewProduct.Stock.ToString();
 
 
             }
+
+
+
         }
     }
 }

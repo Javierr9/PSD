@@ -22,7 +22,7 @@
                     </ItemTemplate>
 
                 </asp:TemplateField>
-                 <asp:TemplateField  >
+                 <asp:TemplateField  Visible="false" >
                     <ItemTemplate>
                      <asp:Button ID="btnAddToCart" Text="Add To Cart" runat="server" OnClick="btnAddToCart_click"/>
                     </ItemTemplate>

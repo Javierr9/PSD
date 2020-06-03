@@ -12,6 +12,9 @@
         <asp:Label Width="150px" runat="server" Text="Price"></asp:Label>
         <asp:Label Width="150px" runat="server" ID="Price"></asp:Label>
         <br /><br />
+        <asp:Label Width="150px" runat="server" Text="Stock"></asp:Label>
+        <asp:Label Width="150px" runat="server" ID="Stock"></asp:Label>
+        <br /><br />
         <asp:Label Width="150px" runat="server" Text="Quantity"></asp:Label>
         <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="txtQuantityValidator" runat="server" ErrorMessage="Please input integers only" CssClass="validate" ControlToValidate="txtQuantity" ValidationExpression="\d+"></asp:RegularExpressionValidator> 
