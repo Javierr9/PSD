@@ -44,12 +44,28 @@ namespace TokoBeDia.Repositories
                            p.Name,
                            p.Price,
                            c.Quantity,
-                           Subtotal = c.Quantity * p.Price
+                           Subtotal = c.Quantity * p.Price 
                        };
             return Join.ToList();
         }
+        public static void UpdateCartById(int UserId, int ProductId, int Quantity)
+        {
+            Cart existingCart = db.Carts.Where(x => x.UserID == UserId && x.ProductID == ProductId).FirstOrDefault();
+            existingCart.Quantity = Quantity;
+            db.SaveChanges();
+        }
+        public Cart GetCardByTwoId(int UserId, int ProductId)
+        {
+            Cart newCart = db.Carts.Where(x => x.UserID == UserId && x.ProductID == ProductId).FirstOrDefault();
+            return newCart;
+        }
 
-
+        public int CountListByProductId(int ProductID)
+        {
+            List<Cart> targetedCart = db.Carts.Where(c => c.ProductID == ProductID).ToList();
+            int ListAmount = targetedCart.Sum(x => x.Quantity);
+            return ListAmount;
+        }
     }
     
 }

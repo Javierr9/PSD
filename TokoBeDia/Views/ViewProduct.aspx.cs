@@ -22,6 +22,9 @@ namespace TokoBeDia.Views
             {
                 gridProduct.Columns[5].Visible = true;
                 btnInsertProduct.Visible = true;
+            }else if(Convert.ToInt32(Session["RoleId"]) == 1)
+            {
+                gridProduct.Columns[6].Visible = true;
             }
         }
 

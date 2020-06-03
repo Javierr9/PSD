@@ -21,6 +21,21 @@ namespace TokoBeDia.Handlers
             CartGrid.DataSource = CartRepository.GetDataJoin(UserId);
             CartGrid.DataBind();
         }
+        public static void UpdateCart(int UserId, int ProductId, int Quantity)
+        {
+            CartRepository.UpdateCartById(UserId, ProductId, Quantity);
+        }
+        public Cart GetCartByTwoId(int UserId, int ProductId)
+        {
+            Cart newCart = new CartRepository().GetCardByTwoId(UserId, ProductId);
+            return newCart;
+        }
+        public int CountListByProductId(int ProductID)
+        {
+            int listAmount = new CartRepository().CountListByProductId(ProductID);
+            return listAmount;
+        }
+
 
     }
 }

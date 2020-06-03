@@ -19,7 +19,7 @@ namespace TokoBeDia.MasterPage
                 btnProfile.Visible = true;
                 btnChangePassword.Visible = true;
                 btnLogout.Visible = true;
-                btnViewCart.Visible = true;
+               
                 //btnViewTransactionHistory.Visible = true;
                 //this will be visible for only Admin
                 if (RoleId == 2)
@@ -27,6 +27,9 @@ namespace TokoBeDia.MasterPage
                     btnViewUser.Visible = true;
                     btnViewProductType.Visible = true;
                     btnViewPaymentType.Visible = true;
+                }else
+                {
+                    btnViewCart.Visible = true;
                 }
             }
             else
