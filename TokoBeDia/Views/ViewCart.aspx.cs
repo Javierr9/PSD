@@ -15,9 +15,15 @@ namespace TokoBeDia.Views
             if (Session["UserEmail"] == null || Convert.ToInt32(Session["RoleId"]) != 1)
             {
                 Response.Redirect("Login.aspx");
+            }else
+            {
+                int User = Int32.Parse(Session["UserID"].ToString());
+                CartHandler.updateDataJoin(gridCart, User);
             }
+
             if (!IsPostBack)
             {
+
                 if (Convert.ToInt32(Session["RoleId"]) == 1 && Session["UserID"] != null){
                     int UserId = Int32.Parse(Session["UserID"].ToString());
                     CartHandler.updateDataJoin(gridCart, UserId);
@@ -42,17 +48,27 @@ namespace TokoBeDia.Views
         protected void btnDelete_click(object sender, EventArgs e)
         {
             GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
-            int ID = Convert.ToInt32(row.Cells[0].Text);
+            int ProductID = Convert.ToInt32(row.Cells[0].Text);
+            int UserId = Int32.Parse(Session["UserID"].ToString());
+            int QuantityInCart = Convert.ToInt32(row.Cells[3].Text);
 
-            //bool check = new ProductHandler().GetReferencedDetailTransaction(ID);
+            //bool check = new CartHandler().GetReferenced(ID);
             //if (check == true)
             //{
             //    lblErrorDelete.Visible = true;
             //    return;
             //}
 
-            //new ProductHandler().DeleteProduct(ID);
-
+            new CartHandler().DeleteCart(UserId, ProductID);
+            new ProductHandler().AddProductStockById(ProductID, QuantityInCart);
+            CartHandler.updateDataJoin(gridCart, UserId);
+            int GrandTotal = 0;
+            gridCart.Columns[5].Visible = true;
+            for (int i = 0; i < gridCart.Rows.Count; ++i)
+            {
+                GrandTotal += Convert.ToInt32(gridCart.Rows[i].Cells[4].Text.ToString());
+            }
+            grandTotalLabel.Text = "Grand Total = " + GrandTotal.ToString();
         }
     }
 } 

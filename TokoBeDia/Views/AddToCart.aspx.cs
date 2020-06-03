@@ -34,7 +34,7 @@ namespace TokoBeDia.Views
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            if (Int32.Parse(txtQuantity.Text) > Int32.Parse(Stock.Text) || Int32.Parse(txtQuantity.Text) == 0)
+            if (Int32.Parse(txtQuantity.Text) > Int32.Parse(Stock.Text) || Int32.Parse(txtQuantity.Text) == 0 || txtQuantity == null)
             {
                 txtQuantity.Text = "";
                 lblErrorSubmit.Text = "Please input a valid quantity";

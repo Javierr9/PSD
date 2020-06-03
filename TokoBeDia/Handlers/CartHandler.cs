@@ -35,7 +35,9 @@ namespace TokoBeDia.Handlers
             int listAmount = new CartRepository().CountListByProductId(ProductID);
             return listAmount;
         }
-
-
+        public void DeleteCart(int UserID, int ProductID)
+        {
+           new CartRepository().DeleteCart(UserID, ProductID);
+        }
     }
 }

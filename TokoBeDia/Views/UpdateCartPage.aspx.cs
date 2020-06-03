@@ -36,7 +36,8 @@ namespace TokoBeDia.Views
             int UserID = Int32.Parse(Session["UserID"].ToString());
             Product currentProduct = new ProductHandler().GetProductByID(ProductID);
             Cart currentCart = new CartHandler().GetCartByTwoId(UserID, ProductID);
-            int currentListTotal = new CartHandler().CountListByProductId(ProductID);
+            int currentListTotal = new CartHandler().CountListByProductId(ProductID) + currentProduct.Stock;
+
             if (Int32.Parse(txtQuantity.Text) > currentListTotal || Int32.Parse(txtQuantity.Text) == 0 || Int32.Parse(txtQuantity.Text) == currentCart.Quantity)
             {
                 txtQuantity.Text = "";
@@ -69,7 +70,7 @@ namespace TokoBeDia.Views
                 Product NewProduct = new ProductHandler().GetProductByID(ProductID);
                 Stock.Text = NewProduct.Stock.ToString();
 
-
+                Response.Redirect("ViewCart.aspx"); 
             }
 
 

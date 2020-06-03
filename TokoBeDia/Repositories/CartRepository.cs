@@ -66,6 +66,16 @@ namespace TokoBeDia.Repositories
             int ListAmount = targetedCart.Sum(x => x.Quantity);
             return ListAmount;
         }
+
+        public void DeleteCart(int UserID, int ProductId)
+        {
+            Cart deleteCart = db.Carts.Where(x => x.UserID == UserID && x.ProductID == ProductId).FirstOrDefault();
+            if (deleteCart != null)
+            {
+                db.Carts.Remove(deleteCart);
+                db.SaveChanges();
+            }
+        }
     }
     
 }

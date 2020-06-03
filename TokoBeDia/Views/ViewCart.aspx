@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/General.Master" AutoEventWireup="true" CodeBehind="ViewCart.aspx.cs" Inherits="TokoBeDia.Views.ViewCart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/General.Master" AutoEventWireup="true" CodeBehind="ViewCart.aspx.cs" Inherits="TokoBeDia.Views.ViewCart" EnableEventValidation="False" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -17,8 +17,8 @@
                 <asp:BoundField DataField="Subtotal" HeaderText="Subtotal" ItemStyle-Width="100" />
                 <asp:TemplateField >
                     <ItemTemplate>
-                        <asp:Button ID="btnUpdate" Text="Update" runat="server" OnClick="btnUpdate_click" />
-                        <asp:Button ID="btnDelete" Text="Delete" runat="server" OnClick="btnDelete_click"  />
+                        <asp:Button ID="btnUpdate" Text="Update" runat="server" OnClick="btnUpdate_click" CausesValidation="False" />
+                        <asp:Button ID="btnDelete" Text="Delete" runat="server" OnClick="btnDelete_click"  CausesValidation="False" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
