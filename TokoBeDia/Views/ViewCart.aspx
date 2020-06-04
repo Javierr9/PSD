@@ -27,7 +27,15 @@
         <br />
         <asp:Label ID="grandTotalLabel" runat="server" Font-bold ="true" />
         <br />
+        <br />
 
+        <asp:Label Width="150px" runat="server" Text="Payment Type"></asp:Label>
+        <asp:DropDownList ID="ddlPaymentType" runat="server" AutoPostBack="true"/>
+        <br /><br />
+
+        <asp:Label ID="lblErrorCheckout" runat="server" Text="Cart is empty!" CssClass="validate" Visible="false"></asp:Label>
+        <br />
+        <asp:Button ID="btnCheckout" Text="Checkout" runat="server" OnClick="btnCheckout_Click" />
 
     </div>
 </asp:Content>

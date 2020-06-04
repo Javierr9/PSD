@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TokoBeDia.Handlers;
+using TokoBeDia.Models;
 
 namespace TokoBeDia.Views
 {
@@ -34,6 +35,12 @@ namespace TokoBeDia.Views
                         GrandTotal += Convert.ToInt32(gridCart.Rows[i].Cells[4].Text.ToString());
                     }
                     grandTotalLabel.Text = "Grand Total = " + GrandTotal.ToString();
+
+                    List<PaymentType> dataPT = new PaymentTypeHandler().GetAllPaymentType();
+                    ddlPaymentType.DataSource = dataPT;
+                    ddlPaymentType.DataTextField = "Type";
+                    ddlPaymentType.DataValueField = "ID";
+                    ddlPaymentType.DataBind();
                 }
                 
             }
@@ -69,6 +76,29 @@ namespace TokoBeDia.Views
                 GrandTotal += Convert.ToInt32(gridCart.Rows[i].Cells[4].Text.ToString());
             }
             grandTotalLabel.Text = "Grand Total = " + GrandTotal.ToString();
+        }
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            int userId = Int32.Parse(Session["UserID"].ToString());
+            int paymentId = Convert.ToInt32(ddlPaymentType.SelectedValue);
+            DateTime now = DateTime.Now;
+
+            bool check = new CartHandler().checkCartIsEmpty(userId);
+            if(check == true)
+            {
+                lblErrorCheckout.Visible = true;
+                return;
+            }
+            else
+            {
+                lblErrorCheckout.Visible = false;
+
+                new HeaderTransasctionHandler().InsertHTransaction(userId, paymentId, now);
+                int transactionID = new HeaderTransasctionHandler().GetLastTransactionID();
+                new DetailTransactionHandler().InsertDTransaction(transactionID, userId);
+                new CartHandler().DeleteAllCartByUserID(userId);
+            }
         }
     }
 } 

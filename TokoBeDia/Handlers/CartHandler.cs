@@ -39,5 +39,36 @@ namespace TokoBeDia.Handlers
         {
            new CartRepository().DeleteCart(UserID, ProductID);
         }
+        public bool checkCartIsEmpty(int userID)
+        {
+            List<Cart> check = new CartRepository().GetCartByUserId(userID);
+            if (check.Count > 0)
+            {
+                return false;
+            }
+            else return true;
+        }
+
+        public void DeleteAllCartByUserID(int userID)
+        {
+            List<Cart> cartByUserID = new CartRepository().GetCartByUserId(userID);
+
+            foreach (var item in cartByUserID)
+            {
+                new CartRepository().DeleteCart(userID, item.ProductID);
+            }
+        }
+
+        public void InsertDTransaction(int transactionID, int userID)
+        {
+            List<Cart> cartByUserID = new CartRepository().GetCartByUserId(userID);
+
+            foreach (var item in cartByUserID)
+            {
+                DetailTransaction newDT = new DetailTransactionFactory().CreateDetailTransaction(transactionID, item.ProductID, item.Quantity);
+                new DetailTransactionRepository().InsertDTransaction(newDT);
+            }
+
+        }
     }
 }

@@ -76,6 +76,12 @@ namespace TokoBeDia.Repositories
                 db.SaveChanges();
             }
         }
+
+        public List<Cart> GetCartByUserId(int userId)
+        {
+            List<Cart> cartUserId = db.Carts.Where(x => x.UserID == userId).ToList();
+            return cartUserId;
+        }
     }
     
 }

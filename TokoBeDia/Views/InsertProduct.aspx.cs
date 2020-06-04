@@ -51,7 +51,7 @@ namespace TokoBeDia.Views
             }
             lblErrorPrice.Visible = false;
 
-            Product product = new ProductFactory().CreateProduct(Convert.ToInt32(ddlProductType.SelectedValue), name, price, stock); //default value, coz di soal gaada, why tho
+            Product product = new ProductFactory().CreateProduct(Convert.ToInt32(ddlProductType.SelectedValue), name, price, stock);
             new ProductHandler().InsertProduct(product);
             
             

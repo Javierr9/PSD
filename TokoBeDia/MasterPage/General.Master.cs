@@ -103,9 +103,9 @@ namespace TokoBeDia.MasterPage
             Response.Redirect("ViewCart.aspx");
         }
 
-        //protected void btnViewTransactionHistory_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("ViewTransactionHistory.aspx");
-        //}
+        protected void btnViewTransactionHistory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TransactionHistory.aspx");
+        }
     }
 }
