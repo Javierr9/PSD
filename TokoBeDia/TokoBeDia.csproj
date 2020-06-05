@@ -148,6 +148,7 @@
     <Content Include="Views\InsertProductType.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Register.aspx" />
+    <Content Include="Views\TransactionHistoryPage.aspx" />
     <Content Include="Views\UpdateCartPage.aspx" />
     <Content Include="Views\UpdatePaymentType.aspx" />
     <Content Include="Views\UpdateProduct.aspx" />
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="Views\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionHistoryPage.aspx.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionHistoryPage.aspx.designer.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\UpdateCartPage.aspx.cs">
       <DependentUpon>UpdateCartPage.aspx</DependentUpon>

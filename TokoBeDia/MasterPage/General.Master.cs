@@ -19,6 +19,7 @@ namespace TokoBeDia.MasterPage
                 btnProfile.Visible = true;
                 btnChangePassword.Visible = true;
                 btnLogout.Visible = true;
+                btnViewTransactionHistory.Visible = true;
                
                 //btnViewTransactionHistory.Visible = true;
                 //this will be visible for only Admin
@@ -105,7 +106,7 @@ namespace TokoBeDia.MasterPage
 
         protected void btnViewTransactionHistory_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TransactionHistory.aspx");
+            Response.Redirect("TransactionHistoryPage.aspx");
         }
     }
 }

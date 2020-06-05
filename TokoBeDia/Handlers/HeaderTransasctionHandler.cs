@@ -5,6 +5,7 @@ using System.Web;
 using TokoBeDia.Models;
 using TokoBeDia.Repositories;
 using TokoBeDia.Factories;
+using System.Web.UI.WebControls;
 
 namespace TokoBeDia.Handlers
 {
@@ -19,6 +20,11 @@ namespace TokoBeDia.Handlers
         public int GetLastTransactionID()
         {
             return new HeaderTransactionRepository().GetLastTransactionID();
+        }
+        public static void updateGridDataMember(GridView gridTransaction, int UserId)
+        {
+            gridTransaction.DataSource = new HeaderTransactionRepository().GetDataJoinMember(UserId);
+            gridTransaction.DataBind();
         }
     }
 }
