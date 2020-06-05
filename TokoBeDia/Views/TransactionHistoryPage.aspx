@@ -8,6 +8,7 @@
     <div>
         <asp:GridView ID="gridTransaction" runat="server" AutoGenerateColumns="false">
             <Columns>
+                <asp:BoundField DataField="UserName" HeaderText="User Name" ItemStyle-Width="150" Visible="false"/>
                 <asp:BoundField DataField="Date" HeaderText="Transaction Date" ItemStyle-Width="150" />
                 <asp:BoundField DataField="Type" HeaderText="Payment Type" ItemStyle-Width="150" />
                 <asp:BoundField DataField="Name" HeaderText="Product Name" ItemStyle-Width="100" />

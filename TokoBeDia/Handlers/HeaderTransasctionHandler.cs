@@ -26,5 +26,10 @@ namespace TokoBeDia.Handlers
             gridTransaction.DataSource = new HeaderTransactionRepository().GetDataJoinMember(UserId);
             gridTransaction.DataBind();
         }
+        public static void updateGridDataAdmin(GridView gridTransaction)
+        {
+            gridTransaction.DataSource = new HeaderTransactionRepository().GetDataJoinAdmin();
+            gridTransaction.DataBind();
+        }
     }
 }

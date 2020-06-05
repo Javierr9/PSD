@@ -21,9 +21,10 @@ namespace TokoBeDia.Views
                 int UserId = Int32.Parse(Session["UserID"].ToString());
                 HeaderTransasctionHandler.updateGridDataMember(gridTransaction, UserId);
             }
-            else if (Convert.ToInt32(Session["RoleId"]) == 2)
+            else if (Convert.ToInt32(Session["RoleId"]) == 2)//Admin
             {
-                
+                gridTransaction.Columns[0].Visible = true; ;
+                HeaderTransasctionHandler.updateGridDataAdmin(gridTransaction);
             }
         }
     }
