@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -22,27 +15,8 @@ namespace TokoBeDia.Views
 
         protected void btnChange_Click(object sender, EventArgs e)
         {
-            string oldPassword = txtOldPassword.Text;
-            string email = Convert.ToString(Session["UserEmail"]);
-            string newPassword = txtNewPassword.Text;
-
-            if(newPassword.Length <= 5)
-            {
-                lblErrorNewPassword.Text = "Must be longer than 5 characters";
-                return;
-            }
-
-            User check = new UserHandler().GetUserByEmailAndPass(email, oldPassword);
-            if(check == null)
-            {
-                lblErrorChange.Text = "Mismatch password";
-                return;
-            }
-
-            new UserHandler().UpdatePassword(check, newPassword);
-            lblErrorChange.Text = "";
-            lblErrorNewPassword.Text = "";
-            lblSuccess.Visible = true;
+            new ChangePasswordController().ChangePassword(txtOldPassword, Session["UserEmail"], txtNewPassword, lblErrorNewPassword,lblErrorChange , lblSuccess);
+            
                 
         }
     }

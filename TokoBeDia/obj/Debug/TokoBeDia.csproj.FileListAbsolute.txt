@@ -162,3 +162,19 @@ C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisi
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\stdole.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.CrystalReports.Engine.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportSource.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.Shared.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\stdole.dll
