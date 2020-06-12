@@ -10,6 +10,7 @@
         <asp:Label Width="150px" runat="server" Text="Email"></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqEmail" runat="server" ControlToValidate="txtEmail" CssClass="validate" ErrorMessage="Must be filled"></asp:RequiredFieldValidator>
+        <asp:Label ID="lblErrorEmail" runat="server" Text="Must be unique" CssClass="validate" Visible="false"></asp:Label>
         <br /><br />
 
         <asp:Label Width="150px" runat="server" Text="Name"></asp:Label>

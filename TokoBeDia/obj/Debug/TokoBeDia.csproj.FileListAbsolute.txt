@@ -146,3 +146,19 @@ Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.Web.xml
 Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.AI.WindowsServer.xml
 Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.ApplicationInsights.xml
 Z:\BINUS\Semester 4\PSD\PSD-ProjectAkhir\TokoBeDia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.Shared.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Chen-chen\Documents\GitHub\PSD-ProjectAkhir\TokoBeDia\bin\stdole.dll

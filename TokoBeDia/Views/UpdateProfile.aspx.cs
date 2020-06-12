@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -22,15 +19,7 @@ namespace TokoBeDia.Views
             {
                 if (!IsPostBack)
                 {
-                    User dataUser = new UserHandler().GetUserByEmail(Convert.ToString(Session["UserEmail"]));
-
-                    txtEmail.Text = dataUser.Email;
-                    txtName.Text = dataUser.Name;
-
-                    if (rblGender.Items.FindByText(dataUser.Gender) != null)
-                    {
-                        rblGender.Items.FindByText(dataUser.Gender).Selected = true;
-                    }
+                    new UpdateProfileController().initPage(txtEmail, txtName, rblGender);     
                 }
                 
             }
@@ -38,17 +27,7 @@ namespace TokoBeDia.Views
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            string currentEmail = Convert.ToString(Session["UserEmail"]);
-            string newEmail = txtEmail.Text;
-            string newName = txtName.Text;
-            string gender = rblGender.Text;
-            int roleId = Convert.ToInt32(Session["RoleId"]);
-
-            User newData = new UserFactory().CreteUser(newEmail, newName, null, gender, roleId, null);
-
-            new UserHandler().UpdateUser(newData, currentEmail);
-
-            lblSuccess.Visible = true;
+            new UpdateProfileController().validateUpdateProfile(txtEmail, txtName, rblGender, lblSuccess, lblErrorEmail);
         }
     }
 }

@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -20,39 +17,14 @@ namespace TokoBeDia.Views
             }
             if (!IsPostBack)
             {
-                int ID = Convert.ToInt32(Request.QueryString["paymenttypeid"]);
-
-                PaymentType currentData = new PaymentTypeHandler().GetPaymentTypeByID(ID);
-                txtPaymentType.Text = currentData.Type;
+                new UpdatePaymentTypeController().initPage(txtPaymentType);
             }
         }
 
         protected void btnUpdatePaymentType_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(Request.QueryString["paymenttypeid"]);
-            string name = txtPaymentType.Text;
-
-            List<PaymentType> check = new PaymentTypeHandler().GetSameNameUpdate(name);
-            int flag = 0;
-            foreach (var item in check)
-            {
-                if (item.ID != ID)
-                {
-                    flag = 1;
-                    break;
-                }
-            }
-            if (flag == 1)
-            {
-                lblErrorPaymentType.Visible = true;
-                return;
-            }
-
-            PaymentType newPaymentType = new PaymentTypeFactory().CreatePaymentType(name);
-            new PaymentTypeHandler().UpdatePaymentType(newPaymentType, ID);
-
-            lblSuccess.Visible = true;
-            lblErrorPaymentType.Visible = false;
+            new UpdatePaymentTypeController().validateUpdatePaymentType(txtPaymentType, lblErrorPaymentType, lblSuccess);
+            
         }
     }
 }
