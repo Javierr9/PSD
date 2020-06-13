@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using TokoBeDia.Handlers;
 using System.Web.UI.WebControls;
 using TokoBeDia.Models;

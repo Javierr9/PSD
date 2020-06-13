@@ -180,6 +180,9 @@
     <Compile Include="Controllers\UpdateProductTypeController.cs" />
     <Compile Include="Controllers\UpdateProfileController.cs" />
     <Compile Include="Controllers\ViewCartController.cs" />
+    <Compile Include="Controllers\ViewPaymentTypeController.cs" />
+    <Compile Include="Controllers\ViewProductController.cs" />
+    <Compile Include="Controllers\ViewProductTypeController.cs" />
     <Compile Include="Controllers\ViewUserController.cs" />
     <Compile Include="Factories\CartFactory.cs" />
     <Compile Include="Factories\DetailTransactionFactory.cs" />
