@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -16,57 +9,39 @@ namespace TokoBeDia.Views
         {
             if (!IsPostBack)
             {
-                UpdateGridData();
+                new ViewProductController().UpdateGridData(gridProduct);
             }
+
             if(Convert.ToInt32(Session["RoleId"]) == 2)
             {
-                gridProduct.Columns[5].Visible = true;
-                btnInsertProduct.Visible = true;
+                new ViewProductController().InitRoleID2(gridProduct, btnInsertProduct);
+
             }else if(Convert.ToInt32(Session["RoleId"]) == 1)
             {
-                gridProduct.Columns[6].Visible = true;
+                new ViewProductController().InitRoleID1(gridProduct);
+
             }
         }
 
-        private void UpdateGridData()
-        {
-            gridProduct.DataSource = new ProductHandler().GetAllProduct();
-            gridProduct.DataBind();
-        }
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
-
-            Response.Redirect("UpdateProduct.aspx?productid=" + row.Cells[0].Text);
+            new ViewProductController().UpdateProduct(sender);
         }
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
-            int ID = Convert.ToInt32(row.Cells[0].Text);
-
-            bool check = new ProductHandler().GetReferencedDetailTransaction(ID);
-            if(check == true)
-            {
-                lblErrorDelete.Visible = true;
-                return;
-            }
-
-            new ProductHandler().DeleteProduct(ID);
+            new ViewProductController().DeleteProduct(sender, lblErrorDelete);
         }
         protected void btnInsertProduct_Click(object sender, EventArgs e)
         {
-            Response.Redirect("InsertProduct.aspx");
+            new ViewProductController().InsertProduct();
         }
+
 
         protected void btnAddToCart_click(object sender, EventArgs e)
         {
-            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
-            int ID = Convert.ToInt32(row.Cells[0].Text);
-            //int UserID = Convert.ToInt32(Session["UserID"]);
-            //CartHandler.AddToCart(UserID, ID);
-            Response.Redirect("AddToCart.aspx?ProductID=" +ID);
-
+            new ViewProductController().AddToCart(sender);
 
         }
     }

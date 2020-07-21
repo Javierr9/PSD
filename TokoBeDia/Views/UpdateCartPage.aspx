@@ -22,7 +22,7 @@
        
         <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"/>
         <br /><br />
-        <asp:Label ID="lblErrorSubmit" runat="server" Text="Please input a valid quantity" CssClass="validate"></asp:Label>
+        <asp:Label ID="lblErrorSubmit" runat="server" Text="Please input a valid quantity" CssClass="validate" Visible="false"></asp:Label>
 
     </div>
 </asp:Content>

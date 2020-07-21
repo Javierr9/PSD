@@ -70,7 +70,7 @@
 
             <div class="headerMember">
                 <asp:Button ID="btnViewCart" runat="server" Text="View Cart" Visible="false" CausesValidation="false" OnClick="btnViewCart_Click"/>
-<%--                <asp:Button ID="btnViewTransactionHistory" runat="server" Text="View Transaction History" Visible="false" CausesValidation="false" OnClick="btnViewTransactionHistory_Click"/>--%>
+                <asp:Button ID="btnViewTransactionHistory" runat="server" Text="View Transaction History" Visible="false" CausesValidation="false" OnClick="btnViewTransactionHistory_Click"/>
                 <asp:Button ID="btnProfile" runat="server" Text="Profile" Visible="false" OnClick="btnProfile_Click" CausesValidation="false"/>  
                 <asp:Button ID="btnChangePassword" runat="server" Text="Change Password" Visible="false" OnClick="btnChangePassword_Click" CausesValidation="false" /> 
                 <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" Visible="false" CausesValidation="false"/>
@@ -86,7 +86,7 @@
         </div>
 
         <footer>
-            <p>Copyright © 2020 by Vincentia Graciella Octaviana</p>
+            <p>Copyright © 2020 by TokoBeDia</p>
         </footer>
 
     </form>

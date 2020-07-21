@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -20,41 +17,13 @@ namespace TokoBeDia.Views
             }
             if (!IsPostBack)
             {
-                int ID = Convert.ToInt32(Request.QueryString["producttypeid"]);
-                
-                ProductType currentData = new ProductTypeHandler().GetProductTypeByID(ID);
-                txtProductType.Text = currentData.Name;
-                txtDescription.Text = currentData.Description;
+                new UpdateProductTypeController().initPage(txtProductType, txtDescription);                
             }
         }
 
         protected void btnUpdateProductType_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(Request.QueryString["producttypeid"]);
-            string name = txtProductType.Text;
-            string description = txtDescription.Text;
-
-            List<ProductType> check = new ProductTypeHandler().GetSameNameUpdate(name);
-            int flag = 0;
-            foreach(var item in check)
-            {
-                if(item.ID != ID)
-                {
-                    flag = 1;
-                    break;
-                }
-            }
-            if(flag == 1)
-            {
-                lblErrorProductType.Visible = true;
-                return;
-            }
-
-            ProductType newProductType = new ProductTypeFactory().CreateProduct(name, description);
-            new ProductTypeHandler().UpdateProductType(newProductType, ID);
-
-            lblSuccess.Visible = true;
-            lblErrorProductType.Visible = false;
+            new UpdateProductTypeController().validateUpdateProductType(txtProductType, txtDescription, lblErrorProductType, lblSuccess);
         }
     }
 }

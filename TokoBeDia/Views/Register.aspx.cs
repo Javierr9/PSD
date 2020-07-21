@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Models;
-using TokoBeDia.Factories;
-using TokoBeDia.Handlers;
+using TokoBeDia.Controllers;
 
 namespace TokoBeDia.Views
 {
@@ -18,33 +11,8 @@ namespace TokoBeDia.Views
         }
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string name = txtName.Text;
-            string password = txtPassword.Text;
-            string gender = rblGender.Text;
-            //bcz it's only for member registration
-            int roleId = 1;
-            string status = "active";
-
-            bool check = new UserHandler().GetSameEmailInsert(email);
-            if(check == true)
-            {
-                lblErrorEmail.Visible = true;
-                return;
-            }
-
-            User newMember = new UserFactory().CreteUser(email, name, password, gender, roleId, status);
-
-            new UserHandler().InsertUser(newMember);
-
-            txtEmail.Text = "";
-            txtName.Text = "";
-            txtPassword.Text = "";
-            txtConfirmPassword.Text = "";
-            rblGender.SelectedIndex = -1;
-            lblErrorEmail.Visible = false;
-
-            Response.Redirect("Home.aspx");
+            new RegisterController().validateRegister(txtEmail, txtName, txtPassword, rblGender, lblErrorEmail);
+            
         }
     }
 }

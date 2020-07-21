@@ -5,10 +5,7 @@ using System.Web;
 using TokoBeDia.Repositories;
 using TokoBeDia.Factories;
 using TokoBeDia.Models;
-<<<<<<< HEAD
-=======
 using System.Web.UI.WebControls;
->>>>>>> Jav
 
 namespace TokoBeDia.Handlers
 {
@@ -16,11 +13,6 @@ namespace TokoBeDia.Handlers
     {
         public static void AddToCart(int UserId, int ProductId, int Quantity)
         {
-<<<<<<< HEAD
-           Cart newCart = CartFactory.CreateCartData(UserId, ProductId, Quantity);
-           CartRepository.AddToCart(newCart);
-        }
-=======
            Cart newCart = new CartFactory().CreateCartData(UserId, ProductId, Quantity);
            CartRepository.AddToCart(newCart);
         }
@@ -43,8 +35,40 @@ namespace TokoBeDia.Handlers
             int listAmount = new CartRepository().CountListByProductId(ProductID);
             return listAmount;
         }
+        public void DeleteCart(int UserID, int ProductID)
+        {
+           new CartRepository().DeleteCart(UserID, ProductID);
+        }
+        public bool checkCartIsEmpty(int userID)
+        {
+            List<Cart> check = new CartRepository().GetCartByUserId(userID);
+            if (check.Count > 0)
+            {
+                return false;
+            }
+            else return true;
+        }
 
+        public void DeleteAllCartByUserID(int userID)
+        {
+            List<Cart> cartByUserID = new CartRepository().GetCartByUserId(userID);
 
->>>>>>> Jav
+            foreach (var item in cartByUserID)
+            {
+                new CartRepository().DeleteCart(userID, item.ProductID);
+            }
+        }
+
+        public void InsertDTransaction(int transactionID, int userID)
+        {
+            List<Cart> cartByUserID = new CartRepository().GetCartByUserId(userID);
+
+            foreach (var item in cartByUserID)
+            {
+                DetailTransaction newDT = new DetailTransactionFactory().CreateDetailTransaction(transactionID, item.ProductID, item.Quantity);
+                new DetailTransactionRepository().InsertDTransaction(newDT);
+            }
+
+        }
     }
 }

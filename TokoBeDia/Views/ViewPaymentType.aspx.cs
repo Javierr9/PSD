@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TokoBeDia.Handlers;
-
+using TokoBeDia.Controllers;
 namespace TokoBeDia.Views
 {
     public partial class ViewPaymentType : System.Web.UI.Page
@@ -18,26 +12,18 @@ namespace TokoBeDia.Views
             }
             if (!IsPostBack)
             {
-                UpdateGridData();
+                new ViewPaymentTypeController().UpdateGridData(gridPaymentType); 
             }
-        }
-
-        private void UpdateGridData()
-        {
-            gridPaymentType.DataSource = new PaymentTypeHandler().GetAllPaymentType();
-            gridPaymentType.DataBind();
         }
 
         protected void btnInsertPaymentType_Click(object sender, EventArgs e)
         {
-            Response.Redirect("InsertPaymentType.aspx");
+            new ViewPaymentTypeController().InsertPaymentType();
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
-
-            Response.Redirect("UpdatePaymentType.aspx?paymenttypeid=" + row.Cells[0].Text);
+            new ViewPaymentTypeController().UpdatePaymentType(sender);
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
